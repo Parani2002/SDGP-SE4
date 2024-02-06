@@ -11,30 +11,31 @@ html = requests.get('https://www.nibm.lk/courses/degree/')
 # Parse the HTML content using BeautifulSoup
 s = BeautifulSoup(html.content, 'html.parser')
 
+# Try to find and extract links for the 'campuscolombo-campus'
 try:
     results00 = s.find('div', id='campuscolombo-campus')
     campuscolombo = results00.find_all('a')
 except:
     pass
-
+# Try to find and extract links for the 'campusrajagiriya-campus'
 try:
     results01 = s.find('div', id='campusrajagiriya-campus')
     campusrajagiriya = results01.find_all('a')
 except:
     pass
-
+# Try to find and extract links for the 'campuskandy-campus'
 try:
     results02 = s.find('div', id='campuskandy-campus')
     campuskandy = results02.find_all('a')
 except:
     pass
-
+# Try to find and extract links for the 'campusnic-kirulapone'
 try:
     results04 = s.find('div', id='campusnic-kirulapone')
     campusnic = results04.find_all('a')
 except:
     pass
-
+# Try to find and extract links for the 'campuskandy-innovation-center'
 try:
     results05 = s.find('div', id='campuskandy-innovation-center')
     campuskandyInnovation = results05.find_all('a')
@@ -44,6 +45,8 @@ except:
 
 
 degreeLinkArray = []
+
+# Try to extract href attributes from links and append to degreeLinkArray
 try:
     
     for link in campuscolombo:
@@ -72,13 +75,17 @@ except:
 print(degreeLinkArray)
 
 print(len(degreeLinkArray))
+# Open a CSV file for writing
 with open('degree.csv', 'w', newline='') as file:
     for x in range(0, len(degreeLinkArray)):
+
+        # Send a GET request to the current degree link
         html = requests.get(degreeLinkArray[x])
         s = BeautifulSoup(html.content, 'html.parser')
 
         try:
 
+            # Try to find and extract information from the current degree page
             results0 = s.find('div', class_='short-info-box fullwidth')
             duration = results0.find_all('span')
 
@@ -102,7 +109,9 @@ with open('degree.csv', 'w', newline='') as file:
             else:
                 display = [degreeName[0].text, duration[0].text, duration[1].text, duration[2].text, duration[3].text,duration[4].text,
                            degreeLinkArray[x]]
+                
 
+            # Write the extracted information to the CSV file
             writer = csv.writer(file)
             writer.writerows([display])
 
