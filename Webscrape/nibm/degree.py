@@ -4,7 +4,11 @@ from tqdm import tqdm
 import csv
 from bs4 import BeautifulSoup, SoupStrainer
 
+
+# Send a GET request to the specified URL
 html = requests.get('https://www.nibm.lk/courses/degree/')
+
+# Parse the HTML content using BeautifulSoup
 s = BeautifulSoup(html.content, 'html.parser')
 
 try:
