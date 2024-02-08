@@ -4,9 +4,11 @@ from tqdm import tqdm
 import csv
 from bs4 import BeautifulSoup, SoupStrainer
 
+# Request HTML content from the webpage
 html = requests.get('https://www.nibm.lk/courses/diploma-programmes/')
 s = BeautifulSoup(html.content, 'html.parser')
 
+# Extract course links from different campuses
 try:
     results00 = s.find('div', id='campuscolombo-campus')
     campuscolombo = results00.find_all('a')
@@ -58,7 +60,7 @@ except:
     pass
 
 
-
+# Initialize arrays to store course links
 degreeLinkArray = []
 try:
     
@@ -120,13 +122,15 @@ except:
 print(degreeLinkArray)
 
 print(len(degreeLinkArray))
+
+# Open a CSV file to store course information
 with open('diploma_programmes.csv', 'w', newline='') as file:
-    for x in range(0, len(degreeLinkArray)):
-        html = requests.get(degreeLinkArray[x])
+    for x in range(0, len(degreeLinkArray)):                        # Loop through each course link
+        html = requests.get(degreeLinkArray[x])                     # Request HTML content from the course page
         s = BeautifulSoup(html.content, 'html.parser')
 
         try:
-
+            # Extract course information
             results0 = s.find('div', class_='short-info-box fullwidth')
             duration = results0.find_all('span')
 
@@ -136,6 +140,7 @@ with open('diploma_programmes.csv', 'w', newline='') as file:
             results2 = s.find('div', class_='programme-intro fullwidth')
             description = results2.find_all('p')
 
+            # Print course information
             print(x)
             print(degreeName[0].text)
             print(duration[0].text)
@@ -143,6 +148,7 @@ with open('diploma_programmes.csv', 'w', newline='') as file:
             print(duration[3].text)
             print(degreeLinkArray[x])
 
+            # Prepare course information for CSV writing
             if duration[1].text == 'Business Analytics Centre' or duration[1].text =='Productivity and Quality Centre':
 
                 display = [degreeName[0].text, duration[0].text, duration[2].text, duration[3].text, duration[4].text,duration[5].text,
@@ -151,6 +157,7 @@ with open('diploma_programmes.csv', 'w', newline='') as file:
                 display = [degreeName[0].text, duration[0].text, duration[1].text, duration[2].text, duration[3].text,duration[4].text,
                            degreeLinkArray[x]]
 
+            # Write course information to CSV file
             writer = csv.writer(file)
             writer.writerows([display])
 

@@ -4,9 +4,11 @@ from tqdm import tqdm
 import csv
 from bs4 import BeautifulSoup, SoupStrainer
 
+# Request HTML content from the webpage
 html = requests.get('https://www.nibm.lk/faculties/school-of-engineering/')
 s = BeautifulSoup(html.content, 'html.parser')
 
+# Find links for different types of programmes
 try:
     results00 = s.find('div', id='degree')
     degree = results00.find_all('a')
@@ -55,10 +57,10 @@ try:
 except:
     pass
 
-
+# Initialize array to store programme links
 degreeLinkArray = []
 try:
-    
+    # Extract links for each type of programme and add them to the array
     for link in degree:
         if link.has_attr('href'):
             degreeLinkArray.append(link['href'])
@@ -94,16 +96,19 @@ try:
 except:
     pass
 
+# Print the extracted links and their count
 print(degreeLinkArray)
 
 print(len(degreeLinkArray))
+
+# Open a CSV file to store programme information
 with open('school_of_engineering.csv', 'w', newline='') as file:
     for x in range(0, len(degreeLinkArray)):
         html = requests.get(degreeLinkArray[x])
         s = BeautifulSoup(html.content, 'html.parser')
 
         try:
-
+            # Extract programme information
             results0 = s.find('div', class_='short-info-box fullwidth')
             duration = results0.find_all('span')
 
@@ -113,6 +118,7 @@ with open('school_of_engineering.csv', 'w', newline='') as file:
             results2 = s.find('div', class_='programme-intro fullwidth')
             description = results2.find_all('p')
 
+            # Print programme information for verification
             print(x)
             print(degreeName[0].text)
             print(duration[0].text)
@@ -120,6 +126,7 @@ with open('school_of_engineering.csv', 'w', newline='') as file:
             print(duration[3].text)
             print(degreeLinkArray[x])
 
+            # Prepare programme information for CSV writing
             if duration[1].text == 'Business Analytics Centre':
 
                 display = [degreeName[0].text, duration[0].text, duration[2].text, duration[3].text, duration[4].text,
@@ -127,7 +134,8 @@ with open('school_of_engineering.csv', 'w', newline='') as file:
             else:
                 display = [degreeName[0].text, duration[0].text, duration[1].text, duration[2].text, duration[3].text,
                            degreeLinkArray[x]]
-
+            
+            # Write programme information to CSV file
             writer = csv.writer(file)
             writer.writerows([display])
 
