@@ -1,0 +1,9 @@
+.newsletter {
+    position: relative;
+    width: 1728px;
+    height: 1117px;
+    background-color: #ffffffbf;
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+  }
