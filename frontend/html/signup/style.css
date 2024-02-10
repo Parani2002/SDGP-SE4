@@ -1,0 +1,169 @@
+.property {
+  position: relative;
+  width: 1728px;
+  height: 1117px;
+  background-color: var(--variable-collection-background);
+}
+
+.property .main-heading {
+  position: absolute;
+  width: 1273px;
+  height: 70px;
+  top: 145px;
+  left: 227px;
+}
+
+.property .text-wrapper {
+  position: absolute;
+  height: 70px;
+  top: -1px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 100px;
+  text-align: center;
+  letter-spacing: 16px;
+  line-height: 60px;
+  white-space: nowrap;
+}
+
+.property .welcome {
+  position: absolute;
+  width: 1309px;
+  height: 36px;
+  top: 298px;
+  left: 210px;
+}
+
+.property .div {
+  position: absolute;
+  width: 1777px;
+  height: 36px;
+  top: -1px;
+  left: -234px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 52px;
+  text-align: center;
+  letter-spacing: 7.8px;
+  line-height: 60px;
+}
+
+.property .name {
+  position: absolute;
+  width: 965px;
+  height: 78px;
+  top: 417px;
+  left: 381px;
+}
+
+.property .frame {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  position: relative;
+  top: 15px;
+}
+
+.property .name-text {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0.64px;
+  line-height: normal;
+}
+
+.property .name-layout {
+  position: relative;
+  width: 965px;
+  height: 4px;
+}
+
+.property .email {
+  position: absolute;
+  width: 965px;
+  height: 78px;
+  top: 578px;
+  left: 381px;
+}
+
+.property .img {
+  width: 965px;
+  height: 4px;
+  top: 74px;
+  position: absolute;
+  left: 0;
+}
+
+.property .text-wrapper-2 {
+  height: 48px;
+  top: 14px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0.64px;
+  line-height: normal;
+  position: absolute;
+  left: 0;
+}
+
+.property .password {
+  position: absolute;
+  width: 965px;
+  height: 78px;
+  top: 739px;
+  left: 381px;
+}
+
+.property .login-button {
+  all: unset;
+  box-sizing: border-box;
+  position: absolute;
+  width: 340px;
+  height: 68px;
+  top: 900px;
+  left: 694px;
+}
+
+.property .overlap-group {
+  position: relative;
+  width: 352px;
+  height: 80px;
+  top: -6px;
+  left: -6px;
+  background-color: #000000;
+  border-radius: 15px;
+}
+
+.property .get-started-text {
+  position: absolute;
+  width: 216px;
+  height: 49px;
+  top: 15px;
+  left: 68px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 32.6px;
+  text-align: center;
+  letter-spacing: 0.65px;
+  line-height: normal;
+}
+
+.property .union {
+  position: absolute;
+  width: 618px;
+  height: 17px;
+  top: 1030px;
+  left: 538px;
+}

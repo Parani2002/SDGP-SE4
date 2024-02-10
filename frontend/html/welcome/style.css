@@ -1,0 +1,115 @@
+.property {
+  position: relative;
+  width: 1728px;
+  height: 1117px;
+  background-color: #c1f3ff;
+}
+
+.property .main-heading {
+  position: absolute;
+  width: 1273px;
+  height: 70px;
+  top: 145px;
+  left: 227px;
+}
+
+.property .text-wrapper {
+  position: absolute;
+  height: 70px;
+  top: -1px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 100px;
+  text-align: center;
+  letter-spacing: 16px;
+  line-height: 60px;
+  white-space: nowrap;
+}
+
+.property .introductory {
+  position: absolute;
+  width: 1024px;
+  height: 418px;
+  top: 423px;
+  left: 352px;
+}
+
+.property .div {
+  position: absolute;
+  width: 1024px;
+  height: 490px;
+  top: -37px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 30.5px;
+  text-align: justify;
+  letter-spacing: 0.3px;
+  line-height: 60px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+}
+
+.property .get-started-button {
+  all: unset;
+  box-sizing: border-box;
+  position: absolute;
+  width: 340px;
+  height: 68px;
+  top: 900px;
+  left: 694px;
+}
+
+.property .overlap-group {
+  position: relative;
+  width: 352px;
+  height: 80px;
+  top: -6px;
+  left: -6px;
+  background-color: #000000;
+  border-radius: 15px;
+}
+
+.property .get-started-text {
+  position: absolute;
+  width: 216px;
+  height: 49px;
+  top: 15px;
+  left: 68px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 32.6px;
+  text-align: center;
+  letter-spacing: 0.65px;
+  line-height: normal;
+}
+
+.property .welcome {
+  position: absolute;
+  width: 1309px;
+  height: 36px;
+  top: 328px;
+  left: 210px;
+}
+
+.property .welcome-2 {
+  position: absolute;
+  height: 36px;
+  top: -1px;
+  left: 115px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 52px;
+  text-align: center;
+  letter-spacing: 7.8px;
+  line-height: 60px;
+  white-space: nowrap;
+}
