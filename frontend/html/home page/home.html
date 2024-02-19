@@ -1,0 +1,103 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Campus Navigator</title>
+        <link rel="stylesheet" href="style.css"">
+        <link rel="stylesheet" href="nnn.css"">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <style>
+            body, html {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                overflow: hidden;
+                background-image: url(img/background.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+            }
+            .Home {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                background: linear-gradient(0deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 100%);
+            }
+            
+        </style>
+       
+    </head>
+    <body>
+        <div class="navbar">
+            <button class="openbtn" onclick="toggleNav()">☰ </button>
+            <nav id="myNavbar" class="navbar-content">
+              <a href="explore.html">Home</a>
+              <a href="questionnaire.html">About</a>
+              <a href="newsletter.html">Services</a>
+              <a href="home.html">Contact</a>
+            </nav>
+        </div>
+        <script>
+            function toggleNav() {
+              var navbar = document.getElementById("myNavbar");
+              navbar.classList.toggle("open");
+              
+              // Check if the navbar is open
+              var isOpen = navbar.classList.contains("open");
+              
+              // If the navbar is open, set overflow to hidden to prevent scrolling
+              if (isOpen) {
+                document.body.style.overflow = "hidden";
+              } else {
+                document.body.style.overflow = ""; // Reset overflow property
+              }
+            }
+        </script>
+    
+
+    
+    
+    
+  
+        <div class="MainHeading" style="width: 100%; position: absolute; top: 20%;">
+            <div class="MainHeading" style="text-align: center; color: black; font-size: 60px; font-family: Poppins; font-weight: 600; text-transform: uppercase; line-height: 1; letter-spacing: 1vw;">CAMPUS NAVIGATOR</div>
+        </div>
+        <div class="GoodMorning" style="width: 100%; position: absolute; top: 35%;">
+            <div class="GoodMorning" style="text-align: center; color: black; font-size: 30px; font-family: Poppins; font-weight: 400; text-transform: capitalize; line-height: 1; letter-spacing: 0.5vw;">Good Morning Matilda</div>
+        </div>
+        <div class="MotivationalParagraph" style="width: 100%; position: absolute; top: 45%;">
+            <div class="MotiviationalParagraph" style="text-align: center; color: black; font-size: 20px; font-family: Poppins; font-weight: 400; text-transform: capitalize; line-height: 1.5; letter-spacing: 2px; margin-left: 200px; margin-right: 200px; text-align: center;">Stay committed and focus driven towards your academic objectives. Each endeavor you undertake now counts to the foundation of your future achievements. Through unwavering dedication and resilience, you are destined to achieve your ambitions.</div>
+        </div>
+        
+    </div>
+    </div>
+    </a>
+        
+            <a href="chatbot.html">
+                <div class="LogoutButton"
+                    style="width: 75px; height: 75px; right:5px; bottom: 0px; position: absolute; justify-content: flex-end; align-items: center; display: inline-flex ;position: absolute; size: 100px; font-size: 5em; color: rgb(0, 0, 0) ">
+                    <i class="fa-solid fa-comment"></i>
+                </div>
+            </a>
+            
+        
+    </div>
+    <script>
+        function toggleNavbar() {
+    var navbar = document.getElementById("navbar");
+    var openbtn = document.querySelector(".openbtn");
+    
+    if (navbar.style.left === "-200px") {
+      navbar.style.left = "0";
+      openbtn.innerText = "Close Navbar";
+    } else {
+      navbar.style.left = "-200px";
+      openbtn.innerText = "Open Navbar";
+    }
+  }
+    </script>
+
+    </body>
+    </html>
