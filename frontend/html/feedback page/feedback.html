@@ -1,106 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>contact us</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="css/Style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/homepage.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/skewed-header.css">
-    <link rel="stylesheet" href="css/page-container.css">
-    <link rel="stylesheet" href="css/contact.css">
-    <link rel="stylesheet" href="css/form.css">
-    <link rel="stylesheet" href="css/media-queries.css">
-
-    <link rel="stylesheet" href="css/square-grid.css">
-
+    <link rel="stylesheet" href="css/skewed-header.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-image: url(img/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+        }
+        .Home {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 100%);
+        }
+        
+    </style>
 </head>
-
 <body>
+    <div class="sidenav" id="mySidenav">
+        <div class="Profile">
+          <img class="Ellipse1" src="img/Profile.png" alt="Profile Picture" />
+        </div>
+        <div class="link-Wrapper" id="linkWrapper">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="home.html">HOME</a>
+          <a href="feedback.html">EXPLORE</a>
+          <a href="newsletter.html">NEWSLETTER</a>
+          <a href="questionnaire.html">QUESTIONNAIRE</a>
+        </div>
+        <a href="signup.html" class="LogoutButton">
+          <i class="fas fa-sign-out-alt" style="font-size: 1.5em;"></i>
+        </a>
+      </div>
+      
+      <div id="main">
+          <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+      </div>
+
     <div class="skewed-header">
-        <div class="header-bg" style="background-image: url(img/bg2.jpg);">
-        </div>
-
-        <div class="skewed-header-wrapper">
-            <div class="skewed-header-content">
-                <div class="heading-wrapper">
-                    <h1>Contact Us</h1>
+        <div class="header-bg" style="background-image: url(img/background.jpg);"></div>
+        <div class="page-container">
+            <div class="contact-grid-wrapper">
+                <div class="company-metadata-sidebar-wrapper">
+                    <div class="logo-class">
+                        <img src="img/logo.jpg" alt="logo">
+                    </div>
                 </div>
-
-                <div class="link-wrapper">
-                    <div class="nav-links">
-                        <a href="menu.html">menu</a>
-                    </div>
-                    <div class="nav-links">
-                        <a href="contact.html">contact</a>
-                    </div>
-                    <div class="nav-links">
-                        <a href="about.html">about</a>
-                    </div>
-                    <div class="nav-links">
-                        <a href="webpage.html">Home</a>
-                    </div>
-
+                <div class="form">
+                    <form id="feedbackForm" class="feedback-form" method="post" action="submit.php">
+                        <h2>Send us your feedback</h2>
+                        <div class="formgroup">
+                            <input type="text" id="fullName" name="fullName" placeholder="Your name" required>
+                        </div>
+                        <div class="formgroup">
+                            <input type="email" id="email" name="email" placeholder="Your email" required>
+                        </div>
+                        <div class="formgroup">
+                            <textarea name="message" id="message" placeholder="Message" required></textarea>
+                        </div>
+                        <div class="centered-btn-wrapper">
+                            <button type="submit" class="btn">Send</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-    <div class="page-container">
-        <div class="contact-grid-wrapper">
-            <div class="company-metadata-sidebar-wrapper">
-                <div class="logo-class">
-                    <img src="img/logo2.jpg" alt="logo">
-                </div>
-                <div class="company-detail-wrapper">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <div>
-                        60,Sivan Street <br>Trincomalee.
-                    </div>
-                </div>
-                <div class="company-detail-wrapper">
-                    <i class="fa-sharp fa-solid fa-phone-volume"></i>
+    <script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
 
-                    <div>
-                        074-274-9260
-                    </div>
-                </div>
-                <div class="company-detail-wrapper">
-                    <i class="fa-solid fa-clock"></i>
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+    var links = document.querySelectorAll('.link-Wrapper a');
+    links.forEach(function(link) {
+        link.addEventListener('click', function() {
+            closeNav();
+        });
+    });
 
-                    <div>
-                        10 to 12
-                    </div>
-                </div>
-            </div>
+    // Close the sidebar when the close button is clicked
+    var closeButton = document.querySelector('.closebtn');
+    closeButton.addEventListener('click', function() {
+        closeNav();
+    });
+</script>
 
-
-            <div class="form">
-                <div class="formgroup">
-                    <input type="text" id="Fullname" placeholder="Your name">
-                    <label for="Fullname">Your name</label>
-                </div>
-
-                <div class="formgroup">
-                    <input type="email" id="email" placeholder="Your email">
-                    <label for="email">Your email</label>
-                </div>
-
-                <div class="formgroup">
-                    <textarea name="message" id="message" placeholder="Message"></textarea>
-                    <label for="message">Your message</label>
-                </div>
-
-                <div class="centered-btn-wrapper">
-                    <button type="submit" class="btn">send</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
+</body>
+</html>
