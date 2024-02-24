@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Navigator</title>
+    <link rel="stylesheet" href="style.css".css>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-image: url(img/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+        }
+        .Home {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 100%);
+        }
+        
+    </style>
+</head>
+<body>
+
+<div class="Home" id="homeContainer">
+  <a href="Home2.html">
+  <div class="NavigationIcon" style="width: 60px; height: 49px; left: 45px; top: px; position: absolute; size: 100px; font-size: 3em; color:">
+    <i class="fa-solid fa-bars"></i>
+  </a>
+</div>
+    <div class="MainHeading" style="width: 100%; position: absolute; top: 20%;">
+        <div class="MainHeading" style="text-align: center; color: black; font-size: 60px; font-family: Poppins; font-weight: 600; text-transform: uppercase; line-height: 1; letter-spacing: 1vw;">CAMPUS NAVIGATOR</div>
+    </div>
+    <div class="GoodMorning" style="width: 100%; position: absolute; top: 35%;">
+        <div class="GoodMorning" style="text-align: center; color: black; font-size: 30px; font-family: Poppins; font-weight: 400; text-transform: capitalize; line-height: 1; letter-spacing: 0.5vw;">Good Morning Matilda</div>
+    </div>
+    <div class="MotivationalParagraph" style="width: 100%; position: absolute; top: 45%;">
+        <div class="MotiviationalParagraph" style="text-align: center; color: black; font-size: 20px; font-family: Poppins; font-weight: 400; text-transform: capitalize; line-height: 1.5; letter-spacing: 2px; margin-left: 200px; margin-right: 200px; text-align: center;">Stay committed and focus driven towards your academic objectives. Each endeavor you undertake now counts to the foundation of your future achievements. Through unwavering dedication and resilience, you are destined to achieve your ambitions.</div>
+    </div>
+    
+  </div>
+</div>
+</a>
+      
+          <a href="#" onclick="loadChatbot()">
+            <div class="LogoutButton"
+                style="width: 75px; height: 75px; right:5px; bottom: 0px; position: absolute; justify-content: flex-end; align-items: center; display: inline-flex ;position: absolute; size: 100px; font-size: 5em; color: rgb(0, 0, 0) ">
+                <i class="fa-solid fa-comment"></i>
+            </div>
+            </a>
+        
+      
+</div>
+
+<script>
+    function loadChatbot() {
+      // Use Fetch API to load the content of chatbot.html
+      fetch('chatbot.html')
+        .then(response => response.text())
+        .then(htmlContent => {
+          // Replace the content of the homeContainer with the loaded HTML content
+          document.getElementById('homeContainer').innerHTML = htmlContent;
+  
+          // Include the associated CSS file (chatbot.css)
+          var chatbotCSS = document.createElement('link');
+          chatbotCSS.rel = 'stylesheet';
+          chatbotCSS.href = 'chatbot.css';
+          document.head.appendChild(chatbotCSS);
+  
+          // Include the associated JavaScript file (chatbot.js)
+          var chatbotScript = document.createElement('script');
+          chatbotScript.src = 'chatbot.js';
+          document.head.appendChild(chatbotScript);
+        })
+        .catch(error => console.error('Error loading chatbot.html:', error));
+    }
+  </script>
+  
+
+  
+  
+
+</body>
+</html>
