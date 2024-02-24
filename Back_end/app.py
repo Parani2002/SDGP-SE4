@@ -1,7 +1,10 @@
 from flask import Flask
 from flask import render_template,request,url_for
+from pymongo import *
+cluster = MongoClient('mongodb://localhost:27017')
 
 app = Flask(__name__)
+
 
 @app.route('/')
 @app.route('/home')
