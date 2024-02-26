@@ -1,9 +1,23 @@
 from flask import Flask
-from flask import render_template,request,url_for
+from flask import render_template,request,url_for,jsonify
 from pymongo import *
-cluster = MongoClient('mongodb://localhost:27017')
+
+
+cluster = MongoClient('mongodb+srv://paranitharanparani13:Parani2002@cluster0.iidblml.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+mydb = cluster['SDGP']
+
+mycol = mydb['Users']
+
 
 app = Flask(__name__)
+
+# @app.route('/insert')
+# def insert():
+#     db = cluster.get_database('SDGP')
+#     collection = db['mycollection']
+#     result = collection.insert_one({'name': 'John', 'age': 30})
+#     return f'Inserted document with id: {result.inserted_id}'
+# insert()
 
 
 @app.route('/')
@@ -11,6 +25,11 @@ app = Flask(__name__)
 
 def home():
     return render_template('index.html')
+
+@app.route("/test", methods=['GET'])
+def test():
+    if request.method == 'GET':
+        return jsonify({"response":"GET request called"})
 
 #Route for career finder model
 @app.route('/career_finder')
@@ -33,7 +52,7 @@ def loginForm():
     password = request.form['password']
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=8000)
 
 
 
