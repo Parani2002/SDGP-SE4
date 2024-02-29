@@ -1,0 +1,22 @@
+
+
+
+/* page container */
+.page-container {
+   display: flex;
+   justify-content: center;
+}
+
+.page-container>.content-wrapper {
+   width: 1000px;
+
+
+}
+
+
+.page-container>.content-wrapper P {
+
+   line-height: 25px;
+   text-align: justify;
+}
+
