@@ -11,35 +11,29 @@ mycol = mydb['Users']
 
 app = Flask(__name__)
 
-# @app.route('/insert')
-# def insert():
-#     db = cluster.get_database('SDGP')
-#     collection = db['mycollection']
-#     result = collection.insert_one({'name': 'John', 'age': 30})
-#     return f'Inserted document with id: {result.inserted_id}'
-# insert()
 
 
 @app.route('/')
 @app.route('/home')
 
 def home():
-    return render_template('index.html')
+    return render_template('home.html')
 
-@app.route("/test", methods=['GET'])
-def test():
-    if request.method == 'GET':
-        return jsonify({"response":"GET request called"})
 
-#Route for career finder model
-@app.route('/career_finder')
-def career_finder():
-    return render_template('career_finder.html')
+#Route for explore page
+@app.route('/explore')
+def explore():
+    return render_template('explore.html')
 
-#Route for the university finder
-@app.route('/university_finder')
-def university_finder():
-    return render_template('uinversity_finder.html')
+#Route for newsletter page
+@app.route('/news_letter')
+def news_letter():
+    return render_template('newsletter.html')
+
+#Route for the questionnaire
+@app.route('/questionnaire')
+def questionnaire():
+    return render_template('questionnaire.html')
 
 #Route for the login page
 @app.route('/login', methods =["GET"])
@@ -52,10 +46,6 @@ def loginForm():
     password = request.form['password']
 
 if __name__ == "__main__":
-    app.run(debug=True, port=8000)
+    app.run(debug=True, port=8001)
 
 
-
-
-def index():
-    return 'Hello World'
