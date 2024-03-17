@@ -77,6 +77,29 @@ def loginForm():
 
 
 #Signup into page and mongoDB connection
+# @app.route('/signup', methods=['GET', 'POST'])
+# def signup():
+#     print("connected")
+#     if request.method == 'POST':
+#         name = request.form['name']
+#         email = request.form['email']
+#         password = request.form['password']
+        
+#         #print("ssssss")
+#         user = {
+#             'name': name,
+#             'email': email,
+#             'password': password
+#         }
+#         print(user)
+#         collection.insert_one(user)
+        
+#         #after successful signup  you might want to redirect the user to another page
+#         return render_template("home.html")
+#     else:
+#         #handle GET request for signup page
+#         return redirect(url_for('signup_form'))  # Assuming you have a signup.html template
+
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     print("connected")
@@ -85,22 +108,23 @@ def signup():
         email = request.form['email']
         password = request.form['password']
         
-        #print("ssssss")
-        user = {
-            'name': name,
-            'email': email,
-            'password': password
-        }
-        print(user)
-        collection.insert_one(user)
-        
-        #after successful signup  you might want to redirect the user to another page
-        return render_template("home.html")
+        if name and email and password:  # Check if all fields are filled
+            user = {
+                'name': name,
+                'email': email,
+                'password': password
+            }
+            print(user)
+            collection.insert_one(user)
+            
+            # After successful signup, redirect the user to another page
+            return render_template("home.html")
+        else:
+            # If any field is empty, render the signup page again
+            return render_template("signup.html", error="Please fill out all fields.")
     else:
-        #handle GET request for signup page
-        return redirect(url_for('signup_form'))  # Assuming you have a signup.html template
-
-
+        # Handle GET request for signup page
+        return render_template("signup.html")
 
 
 #app run on port number 8000
