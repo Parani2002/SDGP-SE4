@@ -37,6 +37,7 @@ def news_letter():
 
 
 
+#Signup into page and mongoDB connection
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     print("connected")
@@ -54,16 +55,17 @@ def signup():
         print(user)
         collection.insert_one(user)
         
-        
+        #after successful signup  you might want to redirect the user to another page
         return render_template("home.html")
     else:
-        
-        return redirect(url_for('signup_form'))  
+        #handle GET request for signup page
+        return redirect(url_for('signup_form'))  # Assuming you have a signup.html template
 
 
 
 
-
+#app run on port number 8000
+#hhtp//localhost:8000
 if __name__ == "_main_":
     app.run(debug=True, port=8000)
 
