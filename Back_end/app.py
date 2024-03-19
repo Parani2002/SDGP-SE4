@@ -51,6 +51,18 @@ def signin_form():
 def signup_form():
     return render_template('Signup.html')
 
+#Route for the quiz page
+@app.route('/quiz')
+def quiz():
+    return render_template('quiz.html')
+
+
+#Route for the career page
+@app.route('/career')
+def career():
+    return render_template('career.html')
+
+
 
 
 #login functionality using POST method
