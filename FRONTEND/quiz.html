@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../image/logo.jpg">
+    <title>Questionnaire</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">  <!--Bootstrap-->
+    <script src="../scripts/navbar.js" defer></script>
+   
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+  <div class="container-fluid">
+    <nav class="sidebar">
+      <header>
+        <div class="text header-text">
+          <span class="main">Campus</span>
+          <span class="main">Navigator</span>
+        </div>
+        <i class="bx bx-chevron-right toggle"></i>
+      </header>
+
+      <div class="menu-bar">
+        <div class="menu">
+          <ul class="menu-links">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <li class="nav-link">
+              <a href="home.html">
+                <i class="bx bx-home-alt icons"></i>
+                <span class="text nav-text">Home</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a href="explore.html">
+                <i class="bx bx-palette icons"></i>
+                <span class="text nav-text">Explore</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a href="newsletter.html">
+                <i class="bx bx-news icons"></i>
+                <span class="text nav-text">Newsletter</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a href="questionnaire.html">
+                <i class="bx bx-book-content icons"></i>
+                <span class="text nav-text">Questionnaire</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bottom-content">
+          <li class="nav-link">
+            <a href="start3.html">
+              <i class="bx bx-log-out icons"></i>
+              <span class="text nav-text">Log Out</span>
+            </a>
+          </li>
+          <li class="mode">
+            <div class="moon-sun">
+              <i class="bx bx-moon icons moon"></i>
+              <i class="bx bx-sun icons sun"></i>
+            </div>
+            <span class="mode-text text">Dark Mode</span>
+            <div class="toggle-switch">
+              <span class="switch"></span>
+            </div>
+          </li>
+        </div>
+      </div>
+    </nav>
+
+    <a href="chatbot.html">
+      <div class="ChatButton" style="width: 100px; height: 100px; left: 1400px; top: 570px; position: absolute">
+        <svg width="112" height="112" viewBox="0 0 112 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="56" cy="56" r="52.61" fill="black" stroke="black" stroke-width="5.22"/>
+          <path d="M76.0001 38.5H36.0001C34.6193 38.5 33.5001 39.6193 33.5001 41V71C33.5001 72.3807 34.6193 73.5 36.0001 73.5H76.0001C77.3808 73.5 78.5001 72.3807 78.5001 71V41C78.5001 39.6193 77.3808 38.5 76.0001 38.5Z" stroke="white" stroke-width="5.22" stroke-linecap="round"/>
+          <path d="M33.5001 42.2505L56.0001 56.0005L78.5001 42.2505" stroke="white" stroke-width="5.22" stroke-linecap="round"/>
+      </svg>
+          
+        
+      </div>   
+    </a>
+
+    <div class="main-container">
+    
+      <h3 class="head1" style="top:auto; margin-top: -20px; ">Take Survey To Find Your Academic Path</h3>
+      
+      <div id="container-container" style="top: auto; margin-top: 0px; text-align: left;">
+        <h6>1. Have you passed OL?</h6>
+        <input type="radio" id="yes" name="OL" value="Yes">
+        <label for="yes">Yes</label><br>
+        <input type="radio" id="no" name="OL" value="No">
+        <label for="no">No</label><br>
+    
+        <h6>2. Have you passed AL?</h6>
+        <input type="radio" id="yes" name="AL" value="Yes">
+        <label for="yes">Yes</label><br>
+        <input type="radio" id="no" name="AL" value="No">
+        <label for="no">No</label><br>
+    
+    
+        <form method="POST" action="/career_quiz">
+            <h6>3. Enter your gender?</h6>
+            <input type="radio" id="male" name="gender" value="1">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="0">
+            <label for="female">Female</label><br>
+    
+    
+    
+            <h6>4. Major interests you have?</h6>
+            <select id="interests" name="interests">
+                <option value="7">Cloud Computing</option>
+                <option value="476">Technology</option>
+                <option value="580">Understand human behaviour</option>
+                <option value="books">Books</option>
+                <option value="travel">Travel</option>
+            </select><br><br>
+    
+            <h6>5. Major skills you have?</h6>
+            <select id="skills" name="skills">
+                <script>
+                    var options = [
+                        { value: '314', label: 'Linux, GIT' },
+                        { value: 'sports', label: 'aaaaa' },
+                        { value: 'movies', label: 'Movies' },
+                        { value: 'books', label: 'Books' },
+                        { value: 'travel', label: 'Travel' },
+                        
+                    ];
+            
+                    options.forEach(function(option) {
+                        document.write('<option value="' + option.value + '">' + option.label + '</option>');
+                    });
+                </script>
+            </select>
+    
+            <br><br>
+            <h6>6. Do you have any additional certifications?</h6>
+            <input type="radio" id="yes" name="CER" value="2">
+            <label for="yes">Yes</label><br>
+            <input type="radio" id="no" name="CER" value="1">
+            <label for="no">No</label><br>
+    
+            <h6>7. If yes, Please mention them below</h6>
+            <select id="certifications" name="certifications">
+                <option value="314">Linux,GIT</option>
+                <option value="sports">Sports</option>
+                <option value="movies">Movies</option>
+                <option value="books">Books</option>
+                <option value="travel">Travel</option>
+            </select><br><br>
+    
+    
+            <button type="submit">Submit</button>
+    
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </body>
+</html>
