@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../image/logo.jpg">
     <title>Questionnaire</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">  <!--Bootstrap-->
     <script src="../scripts/navbar.js" defer></script>
-    <script src="../scripts/quiz.js" defer></script>
     <link rel="stylesheet" href="../style.css" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -13,6 +14,7 @@
     />
   </head>
   <body>
+    <div class="container-fluid">
     <nav class="sidebar">
       <header>
         <div class="text header-text">
@@ -62,7 +64,7 @@
 
         <div class="bottom-content">
           <li class="nav-link">
-            <a href="#">
+            <a href="start3.html">
               <i class="bx bx-log-out icons"></i>
               <span class="text nav-text">Log Out</span>
             </a>
@@ -80,6 +82,7 @@
         </div>
       </div>
     </nav>
+
     <div class="main-container">
       <h1 class="main-heading">Campus Navigator</h1>
       <br />
@@ -88,20 +91,32 @@
       <br />
       <br />
       <div id="quiz-container">
-        <h3 class="quiz-heading">Select Your Prior Qualification</h3>
-        <div id="qualification-buttons">
-          <br />
-          <br />
-          <button class="button" onclick="startQuiz('ordinary')">
-            Ordinary Level
-          </button>
-          <br />
-          <br />
-          <button class="button" onclick="startQuiz('advanced')">
-            Advanced Level
-          </button>
+        <div class="article-1">
+          <div class="article-heading-container">
+            <h2 class="article-1-heading">
+              Academic Finder</h2>
+          </div>
+          <a href="quiz.html"><button>Take Survey</button></a>
+        </div>
+        <div class="article-1">
+          <div class="article-heading-container">
+            <h2 class="article-1-heading">
+              Career Predictor</h2>
+          </div>
+          <a href="career.html"><button>Predict Future</button></a>
+        </div>
+        <button id="chatbot-button">Open Chatbot</button>
+      <div id="chatbot-popup" class="chatbot-hidden">
+        <div id="chatbot-messages"></div>
+        <input type="text" id="chatbot-input" placeholder="Type your message...">
+        <div style="display: flex;">
+          <button id="chatbot-send">Send</button>
+        <button id="chatbot-close">Close</button>
         </div>
       </div>
     </div>
+    </div>
+  <script src="../scripts/chatbot.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </body>
 </html>

@@ -1,15 +1,85 @@
-// Quiz data
 const questions = [
   {
-    question: "Question 1: What is 2 + 2?",
-    answers: ["3", "4", "5", "6"],
-    correctAnswer: "4",
+    question: "Question 1: Skill 1",
+    answers: ["1", "2", "3", "4"],
   },
   {
-    question: "Question 2: What is the capital of France?",
-    answers: ["London", "Berlin", "Paris", "Madrid"],
-    correctAnswer: "Paris",
+    question: "Question 2: Skill 2",
+    answers: ["1", "2", "3", "4"],
   },
+  {
+    question: "Question 2: Skill 3",
+    answers: ["1", "2", "3", "4"],
+  },
+  {
+    question: "Question 2: Skill 4",
+    answers: ["1", "2", "3", "4"],
+  },
+  {
+    question: "Question 2: Skill 5",
+    answers: ["1", "2", "3", "4"],
+  },
+  {
+    question: "Question 2: Skill 6",
+    answers: ["1", "2", "3", "4"],
+  },
+  {
+    question: "Question 2: Skill 7",
+    answers: ["1", "2", "3", "4"],
+  },
+  {
+    question: "Question 2: Skill 8",
+    answers: ["1", "2", "3", "4"],
+  },
+  {
+    question: "Question 2: Skill 9",
+    answers: ["1", "2", "3", "4"],
+  },
+  {
+    question: "Question 2: Skill 10",
+    answers: ["1", "2", "3", "4"],
+  },
+  {
+    question: "Question 2: Skill 11",
+    answers: ["1", "2", "3", "4"],
+  },
+  {
+    question: "Question 2: Skill 12",
+    answers: ["1", "2", "3", "4"],
+  },
+  {
+    question: "Question 2: Skill 13",
+    answers: ["1", "2", "3", "4"],
+  },
+  {
+    question: "Question 2: Skill 14",
+    answers: ["1", "2", "3", "4"],
+  },
+  {
+    question: "Question 2: Skill 15",
+    answers: ["1", "2", "3", "4"],
+  },
+  {
+    question: "Question 2: Skill 16",
+    answers: ["1", "2", "3", "4"],
+  },
+  {
+    question: "Question 2: Skill 17",
+    answers: ["1", "2", "3", "4"],
+  },
+  {
+    question: "Question 2: Skill 18",
+    answers: ["1", "2", "3", "4"],
+  },
+  {
+    question: "Question 2: Skill 19",
+    answers: ["1", "2", "3", "4"],
+  },
+  {
+    question: "Question 2: Skill 20",
+    answers: ["1", "2", "3", "4"],
+  },
+
 ];
 
 let currentQuestionIndex = 0;
@@ -23,7 +93,7 @@ function startQuiz(qualification) {
 
 // Function to display quiz question
 function displayQuestion() {
-  const quizContainer = document.getElementById("quiz-container");
+  const quizContainer = document.getElementById("container-container");
   const currentQuestion = questions[currentQuestionIndex];
 
   quizContainer.innerHTML = `
@@ -56,7 +126,7 @@ function checkAnswer(answer) {
 
 // Function to display quiz result
 function showResult() {
-  const quizContainer = document.getElementById("quiz-container");
+  const quizContainer = document.getElementById("container-container");
   quizContainer.innerHTML = `
       <h2>Quiz Completed!</h2>
       <br>

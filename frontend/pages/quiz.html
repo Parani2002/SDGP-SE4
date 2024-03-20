@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="../image/logo.jpg">
-    <title>Home</title>
+    <title>Questionnaire</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">  <!--Bootstrap-->
     <script src="../scripts/navbar.js" defer></script>
+    <script src="../scripts/quiz.js" defer></script>
     <link rel="stylesheet" href="../style.css" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -82,12 +83,18 @@
         </div>
       </div>
     </nav>
-    <div class="main-container" style="text-align: center; padding: 250px;">
+    <div class="main-container">
       <h1 class="main-heading">Campus Navigator</h1>
       <br />
       <br />
-      <h3 class="morning-heading">Welcome! Stay committed and focus driven towards your academic objectives. Each endeavor you undertake now counts to the foundation of your future achievements. Through unwavering dedication and resilience, you are destined to achieve your ambitions. </h3>
-      <button id="chatbot-button">Open Chatbot</button>
+      <h3 class="morning-heading">Take Survey To Find Your Academic Path</h3>
+      <br />
+      <br />
+      <div id="container-container">
+        <div id="qualification-buttons">
+            <button onclick="startQuiz('qualification')">Start Quiz</button>
+           </div>
+           <button id="chatbot-button">Open Chatbot</button>
       <div id="chatbot-popup" class="chatbot-hidden">
         <div id="chatbot-messages"></div>
         <input type="text" id="chatbot-input" placeholder="Type your message...">
@@ -95,8 +102,7 @@
           <button id="chatbot-send">Send</button>
         <button id="chatbot-close">Close</button>
         </div>
-    </div>
-  </div>
+      </div>
   <!-- Bootstrap JS -->
   <script src="../scripts/chatbot.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
