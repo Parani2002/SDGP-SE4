@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='./image/logo.jpg') }}">
     <title>Questionnaire</title>
-    <script src="{{ url_for('static', filename='navbar.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='quiz.js') }}" defer></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">  <!--Bootstrap-->
+    <script src="{{ url_for('static', filename='./JS/navbar.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='./CSS/style.css') }}" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
   </head>
   <body>
+    <div class="container-fluid">
     <nav class="sidebar">
       <header>
         <div class="text header-text">
@@ -35,7 +36,7 @@
             <br />
             <br />
             <li class="nav-link">
-              <a href="{{ url_for('home') }}">
+              <a href="{{ url_for('main') }}">
                 <i class="bx bx-home-alt icons"></i>
                 <span class="text nav-text">Home</span>
               </a>
@@ -101,20 +102,24 @@
       <br />
       <br />
       <div id="quiz-container">
-        <h3 class="quiz-heading">Select Your Prior Qualification</h3>
-        <div id="qualification-buttons">
-          <br />
-          <br />
-          <button class="button" onclick="startQuiz('ordinary')">
-            Ordinary Level
-          </button>
-          <br />
-          <br />
-          <button class="button" onclick="startQuiz('advanced')">
-            Advanced Level
-          </button>
+        <div class="article-1">
+          <div class="article-heading-container">
+            <h2 class="article-1-heading">
+              Academic Finder</h2>
+          </div>
+          <a href="{{ url_for('quiz') }}"><button>Take Survey</button></a>
+        </div>
+        <div class="article-1">
+          <div class="article-heading-container">
+            <h2 class="article-1-heading">
+              Career Predictor</h2>
+          </div>
+          <a href="{{ url_for('career') }}"><button>Predict Future</button></a>
         </div>
       </div>
     </div>
+    </div>
+  <!-- Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </body>
 </html>
