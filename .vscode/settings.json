@@ -1,4 +1,7 @@
 {
+Geerthanah
+    "liveServer.settings.port": 5501
+
     "liveServer.settings.port": 5501,
     "python.testing.unittestArgs": [
         "-v",
@@ -9,4 +12,5 @@
     ],
     "python.testing.pytestEnabled": false,
     "python.testing.unittestEnabled": true
+main
 }
