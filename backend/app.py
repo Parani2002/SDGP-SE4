@@ -1,3 +1,18 @@
+from flask import Flask
+from flask import render_template,request,url_for,jsonify,redirect
+from pymongo import *
+from pymongo import MongoClient
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.preprocessing import LabelEncoder
+import pickle
+import pandas as pd
+import os
+import numpy as np
+app = Flask(_name_)
+#app run on port number 8000
+#hhtp//localhost:8000
+if _name_ == "_main_":
+    app.run(debug=True, port=8000)
 # Load the dataset
 path = 'Back_end/dataset1.csv'
 dataset = pd.read_csv(path)
