@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../image/logo.jpg">
+    <title>Questionnaire</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">  <!--Bootstrap-->
+    <script src="{{ url_for('static', filename='./JS/navbar.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='./CSS/style.css') }}" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container-fluid">
+    <nav class="sidebar">
+      <header>
+        <div class="text header-text">
+          <span class="main">Campus</span>
+          <span class="main">Navigator</span>
+        </div>
+        <i class="bx bx-chevron-right toggle"></i>
+      </header>
+
+      <div class="menu-bar">
+        <div class="menu">
+          <ul class="menu-links">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <li class="nav-link">
+              <a href="{{ url_for('main') }}">
+                <i class="bx bx-home-alt icons"></i>
+                <span class="text nav-text">Home</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a href="{{ url_for('explore') }}">
+                <i class="bx bx-palette icons"></i>
+                <span class="text nav-text">Explore</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a href="{{ url_for('news_letter') }}">
+                <i class="bx bx-news icons"></i>
+                <span class="text nav-text">Newsletter</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a href="{{ url_for('questionnaire') }}">
+                <i class="bx bx-book-content icons"></i>
+                <span class="text nav-text">Questionnaire</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bottom-content">
+          <li class="nav-link">
+            <a href="{{ url_for('home') }}">
+              <i class="bx bx-log-out icons"></i>
+              <span class="text nav-text">Log Out</span>
+            </a>
+          </li>
+          <li class="mode">
+            <div class="moon-sun">
+              <i class="bx bx-moon icons moon"></i>
+              <i class="bx bx-sun icons sun"></i>
+            </div>
+            <span class="mode-text text">Dark Mode</span>
+            <div class="toggle-switch">
+              <span class="switch"></span>
+            </div>
+          </li>
+        </div>
+      </div>
+    </nav>
+
+    
+    <div class="main-container">
+      <h1 class="main-heading">Campus Navigator</h1>
+      <br />
+      <br />
+      <h3 class="morning-heading">Predict Your Career's Demand In The Near Future</h3>
+      <br />
+      <br />
+
+
+      <form action="/predict" method="POST">
+      <div class="career-container">
+        <h2 class="career-heading">Enter Your Career Name</h2>
+        <br>
+        <input type="text" id="career-input" name="career-input" placeholder="Enter Your Career Name">
+        <br>
+        <br>
+        <button type="submit">Predict Career</button>
+
+      </form>
+        <br>
+        <br>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <p>The Predicted Career is  {{prediction}}</p>
+        </div>
+      </div>
+    </div>
+  <!-- Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </body>
+</html>

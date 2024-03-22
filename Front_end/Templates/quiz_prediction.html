@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='./image/logo.jpg') }}" />
+    <title>Questionnaire</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <!--Bootstrap-->
+    <script src="{{ url_for('static', filename='./JS/navbar.js') }}" defer></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='./CSS/style.css') }}" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <nav class="sidebar">
+        <header>
+          <div class="text header-text">
+            <span class="main">Campus</span>
+            <span class="main">Navigator</span>
+          </div>
+          <i class="bx bx-chevron-right toggle"></i>
+        </header>
+
+        <div class="menu-bar">
+          <div class="menu">
+            <ul class="menu-links">
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <li class="nav-link">
+                <a href="{{ url_for('main') }}">
+                  <i class="bx bx-home-alt icons"></i>
+                  <span class="text nav-text">Home</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="{{ url_for('explore') }}">
+                  <i class="bx bx-palette icons"></i>
+                  <span class="text nav-text">Explore</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="{{ url_for('news_letter') }}">
+                  <i class="bx bx-news icons"></i>
+                  <span class="text nav-text">Newsletter</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="{{ url_for('questionnaire') }}">
+                  <i class="bx bx-book-content icons"></i>
+                  <span class="text nav-text">Questionnaire</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bottom-content">
+            <li class="nav-link">
+              <a href="{{ url_for('home') }}">
+                <i class="bx bx-log-out icons"></i>
+                <span class="text nav-text">Log Out</span>
+              </a>
+            </li>
+            <li class="mode">
+              <div class="moon-sun">
+                <i class="bx bx-moon icons moon"></i>
+                <i class="bx bx-sun icons sun"></i>
+              </div>
+              <span class="mode-text text">Dark Mode</span>
+              <div class="toggle-switch">
+                <span class="switch"></span>
+              </div>
+            </li>
+          </div>
+        </div>
+      </nav>
+
+
+      <div class="main-container">
+        <h3 class="head1" style="top: auto; margin-top: -20px">
+          Take Survey To Find Your Academic Path
+        </h3>
+
+        <div
+          id="container-container"
+          style="top: auto; margin-top: 0px; text-align: left"
+        >
+          <h6>1. Have you passed OL?</h6>
+          <input type="radio" id="yes" name="OL" value="Yes" />
+          <label for="yes">Yes</label><br />
+          <input type="radio" id="no" name="OL" value="No" />
+          <label for="no">No</label><br />
+
+          <h6>2. Have you passed AL?</h6>
+          <input type="radio" id="yes" name="AL" value="Yes" />
+          <label for="yes">Yes</label><br />
+          <input type="radio" id="no" name="AL" value="No" />
+          <label for="no">No</label><br />
+
+          <form method="POST" action="/career_quiz">
+            <h6>3. Enter your gender?</h6>
+            <input type="radio" id="male" name="gender" value="1" />
+            <label for="male">Male</label><br />
+            <input type="radio" id="female" name="gender" value="0" />
+            <label for="female">Female</label><br />
+
+            <h6>4. Major interests you have?</h6>
+            <select id="interests" name = "interests">
+              <option value="7"> Cloud Computing</option>
+              <option value="476">Technology</option>
+              <option value="580">Understand human behaviour</option>
+              <option value="401">Sales/Marketing</option>
+              <option value="276">Trading</option>
+              <option value="338">Research</option>
+              <option value="64">Teaching</option>
+              <option value="442">Understand human body</option>
+              <option value="400">Content Writing</option>
+              <option value="26">Govt. Job</option>
+              <option value="347">Service</option>
+              <option value="130">Infrastructure</option>
+              <option value="63">Financial Analysis</option>
+              <option value="333">Take risk for Profits</option>
+              <option value="464">Entrepreneurship</option>
+              <option value="137">Digital marketing</option>
+              <option value="490">Market Research</option>
+              <option value="119">Agriculture</option>
+              <option value="527">services</option>
+              <option value="446">Construction Management</option>
+              <option value="221">Data analytics</option>
+              <option value="52">Production Supervisor</option>
+              <option value="90">Data scientist</option>
+              <option value="61">All fields related to Data science</option>
+              <option value="273">Information Technology</option>
+              <option value="366">News Coverage</option>
+              <option value="424">Social Justice</option>
+              <option value="180">Game industry;</option>
+              <option value="567">Design</option>
+              <option value="182">Embedded design</option>
+              <option value="199">Software Job</option>
+              <option value="438">Web Designing</option>
+              <option value="192">Web Development</option>
+              <option value="287">Social Causes</option>
+              <option value="214">Home interior design</option>
+              <option value="434">Blockchain</option>
+              <option value="572">Machine Learning</option>
+              <option value="519">Excel</option>
+              <option value="315">Sports Industry</option>
+              <option value="205">Product Life Cycle Management</option>
+              <option value="293">Social Media marketing</option>
+              <option value="5">BioTechnology</option>
+              <option value="161">Salesforce Admin</option>
+              <option value="532">Supply Chain Analysis</option>
+              <option value="346">Oil and Gas</option>
+              <option value="469">Customer Care</option>
+              <option value="484">Urban Planning</option>
+              <option value="498">SAP Consultant in MM</option>
+              <option value="58">Retailer</option>
+              <option value="449">Gardening</option>
+          
+          </select>
+            <br /><br />
+
+            <h6>5. Major skills you have?</h6>
+            <select id="skills" name="skills">
+              <option value="1">Python;SQL;Java</option>
+              <option value="1">
+                Critical Thinking, Analytic Thinking, SQL, Programming, Work
+                under Pressure, Logical Skills, Problem Solving skills
+              </option>
+              <option value="1">People management;Communication skills</option>
+              <option value="1">Accounting Skills;Critical Thinking</option>
+              <option value="1">
+                PLC Allen Bradley;PLC Ladder Logic;LabVIEW;Business
+                Analysis;End-to-End ProjectManagement;Crossfunctional Team
+                Leadership;Requirements Gathering;Lean Six Sigma;Lean six sigma
+                blackbelt;Productivity Improvement
+              </option>
+              <option value="1">C,C++,HTML,Java</option>
+              <option value="1">
+                Critical Thinking, Analytic Thinking, Communication Skills,
+                Creativity Skills, Excel, Logical Skills, Interpersonal Skills,
+                Presentation Skills, Problem Solving skills, Observation Skills,
+                Reading
+              </option>
+              <option value="1">NO</option>
+              <option value="1">
+                Programming Language skills;Critical
+                Thinking;Linux;Python;SQL;Java
+              </option>
+              <option value="1">
+                Active Listening;Critical Thinking;Gathering
+                Information;Artistic/Creative Skills;Communication
+                skills;Leadership;Editing;Problem Solving skills;Writing
+                skills;Medical knowledge;HR;Good communication skills;Teaching
+              </option>
+              <option value="1">
+                Accounting Skills, Analytic Thinking, Cost Accounting, Team
+                work, Excel, Problem Solving skills, Writing, Tableau
+              </option>
+              <option value="1">
+                Analytic Thinking, Gathering Informing, Communication Skills,
+                Team work, Presentation Skills, Problem Solving skills
+              </option>
+              <option value="1">
+                Accounting Skills;Business Knowledge;Leadership;Problem Solving
+                skills;Wealth Management
+              </option>
+              <option value="1">
+                Critical Thinking;Gathering Information;Presentation
+                Skills;Python;SQL;Good communication skills
+              </option>
+              <option value="1">
+                Communication skills;Writing skills;C++;Python;SQL;Java;Cloud
+                Computing
+              </option>
+              <option value="1">
+                Analytical Skills;Data Visualization skills( Power Bi/ Tableau
+                );Machine Learning skills;Python;SQL
+              </option>
+              <option value="1">
+                Programming Language skills;Critical Thinking;Gathering
+                Information;Leadership;Machine Learning skills;Python;Artificial
+                Intelligence;SQL;Java;MATLAB;Good communication skills
+              </option>
+              <option value="1">
+                Python, Critical Thinking, Analytic Thinking, Gathering
+                Informing, SQL, Programming, Leadership, Product Knowledge, Cost
+                Accounting, Market Study, Team work, Excel, Logical Skills, R,
+                Problem Solving skills, Writing, Tableau
+              </option>
+              <option value="1">
+                Matlab ;Embedded C; Arduino; C ++;c ;AVR;Eagle PCB;ARM
+                Cortex-M;KiCAD;Software Project Management
+              </option>
+              <option value="1">
+                Active Listening;Critical Thinking;Analytical Skills;People
+                management;Communication skills;Leadership;Problem Solving
+                skills;Designing skills;Proeficiency in Software like STAAD PRO,
+                ETABS
+              </option>
+              <option value="1">Hardware skills</option>
+              <option value="1">
+                Business Knowledge;Analytical Skills;Product knowledge;Problem
+                Solving skills;Risk management skills;Designing skills;Machine
+                Learning skills;Python;SQL;Cloud Computing;HR
+              </option>
+              <option value="1">
+                Proeficiency in Software like STAAD PRO,
+                ETABS;CAD/CAE(autocad/catia/ansys/proE/SeimensNX)
+              </option>
+              <option value="1">
+                Accounting Skills;Active Listening;Critical Thinking;Gathering
+                Information;Business Knowledge;Analytical Skills;Finance related
+                skills;People management;Communication skills;Negotiation
+                skills;Mass Communication;Leadership;Product knowledge;Problem
+                Solving skills;Risk management skills;Data Visualization skills(
+                Power Bi/ Tableau );Sales;Interpersonal skills;Wealth Management
+              </option>
+              <option value="1">
+                Programming Language skills;Communication skills;Writing
+                skills;Machine Learning skills;Sales;C++;R
+              </option>
+              <option value="1">Active Listening;Teaching</option>
+              <option value="1">
+                Business Knowledge;Civil & Criminal Law;Product knowledge
+              </option>
+              <option value="1">
+                Critical Thinking;Problem Solving skills;Designing
+                skills;Interpersonal skills;Python
+              </option>
+              <option value="1">
+                Strategic Planning;Financial Analysis;Financial
+                Modeling;Marketing Strategy;Financial Services
+              </option>
+              <option value="1">
+                Business Knowledge, People Management, Communication Skills,
+                Work under Pressure, Leadership, Market Study, Team work,
+                Interpersonal Skills, Presentation Skills, Designing Skills,
+                Sales, Design and analysis of automobile components, vehicle
+                maintenance and reconditioning, design for manufacturer and
+                assemble
+              </option>
+              <option value="1">
+                Creativity Skills, Excel, Logical Skills, Observation Skills,
+                Risk Managing, Designing Skills, Vlsi
+                design,simulation,embedded,IOT
+              </option>
+              <option value="1">
+                Active Listening;Business Knowledge;Communication
+                skills;Negotiation skills;Leadership;Product knowledge;Problem
+                Solving skills;Sales;Interpersonal skills
+              </option>
+              <option value="1">
+                Python, Critical Thinking, Analytic Thinking, Java, SQL,
+                Programming, Communication Skills, Negotiation Skills,
+                Creativity Skills, Excel, Logical Skills, Interpersonal Skills,
+                Presentation Skills, C++
+              </option>
+              <option value="1">Business Knowledge</option>
+              <option value="1">
+                Business Knowledge;Analytical Skills;Negotiation skills;Problem
+                Solving skills;Data Visualization skills( Power Bi/ Tableau
+                );Machine Learning skills;SQL
+              </option>
+              <option value="1">
+                Active Listening;Business Knowledge;Risk management
+                skills;Sales;Good communication skills
+              </option>
+              <option value="1">
+                Accounting Skills;Programming Language skills;Critical
+                Thinking;Business Knowledge;Analytical Skills;Finance related
+                skills;Communication skills;Problem Solving
+                skills;C++;Python;SQL
+              </option>
+              <option value="1">
+                Active Listening, Creativity Skills, Team work, Logical Skills
+              </option>
+              <option value="1">Accounting Skills, Cost Accounting</option>
+              <option value="1">
+                Programming Language skills;People management;Mass
+                Communication;Leadership;Designing skills;Writing
+                skills;Architecture
+              </option>
+              <option value="1">
+                Business Knowledge, Product Knowledge, Team work, Sales
+              </option>
+              <option value="1">
+                Gathering Informing, People Management, Communication Skills,
+                Work under Pressure, Leadership, Team work, Interpersonal
+                Skills, Mass Communication, Observation Skills, Risk Managing
+              </option>
+              <option value="1">Sports</option>
+              <option value="1">AI, ML, Python, Java, SQL, Tableau</option>
+              <option value="1">
+                Critical Thinking, Analytic Thinking, Product Knowledge, Team
+                work, Excel, Observation Skills, Risk Managing, Reporting,
+                Reading, Designing Skills
+              </option>
+              <option value="1">
+                Docker;Kubernetes;Amazon Web Services (AWS);Bash;Apache; New
+                Relic APM;Jenkins;Internet Information Services
+                (IIS);Terraform;AKS;Continuous Integration and Continuous
+                Delivery (CI/CD);Amazon EC2
+              </option>
+              <option value="1">Full stack, java, python, reactjs</option>
+            </select>
+
+            <br /><br />
+            <h6>6. Do you have any additional certifications?</h6>
+            <input type="radio" id="yes" name="CER" value="2" />
+            <label for="yes">Yes</label><br />
+            <input type="radio" id="no" name="CER" value="1" />
+            <label for="no">No</label><br />
+
+            <h6>7. If yes, Please mention them below</h6>
+            <select id="certifications" name="certifications">
+              <script>
+                var options = [
+                  { value: "314", label: "Linux,Gi" },
+                  { value: "338", label: "Microsoft certification\xa0" },
+                  { value: "428", label: "Resilience psychology" },
+                  { value: "355", label: "No" },
+                  {
+                    value: "244",
+                    label: "Extreme Productivity (Blinkist Summary)",
+                  },
+                  { value: "84", label: "C,C++,HTML,Java" },
+                  { value: "425", label: "Redhat certification" },
+                  { value: "35", label: "Alteryx and Tableau" },
+                  { value: "316", label: "Machine learning with python" },
+                  {
+                    value: "256",
+                    label:
+                      "ML,Tane the Python,Recommendation project based on Market Analysis ,second prize in Nation Level project competition",
+                  },
+                  { value: "131", label: "Google Data Analytics Course" },
+                  {
+                    value: "21",
+                    label:
+                      "Control Systems;\r\nControl of mobile robots;\r\nDigital Signal Processing;\r\nElectric Power Systems;\r\nElectric machines;\r\nPower Electronics",
+                  },
+                  { value: "92", label: "ANSYS" },
+                  { value: "243", label: "CATIA,AUTOCAD,PRO E" },
+                  {
+                    value: "451",
+                    label:
+                      "Equity Derivatives;Advanced Financial Statements Analysis;\r\nFinancial Modelling;\r\nIntegrated Mangement and Safety;\r\nPricing and Valuation of Fixed Income Instruments",
+                  },
+                  { value: "295", label: "Six Sigma, digital marketing" },
+                  { value: "139", label: "JAVA,Embedded and IOT Cpp with ds" },
+                  { value: "478", label: "Tax and law" },
+                  { value: "221", label: "Digital marketing\xa0 Udemy" },
+                  {
+                    value: "490",
+                    label:
+                      "Creating Routing Policies to Handle Website Traffic Using AWS Route53;Kubernetes",
+                  },
+                  { value: "140", label: "Full stack, java, python, reactjs" },
+                  { value: "254", label: "Data science" },
+                  {
+                    value: "181",
+                    label:
+                      "Web development (PHP, codeigniter), java development, graphic desiging, Android app development",
+                  },
+                  { value: "496", label: "Global and digital marketing" },
+                  {
+                    value: "255",
+                    label: "QA QC in Plasic Products and Materials",
+                  },
+                  { value: "420", label: "catia" },
+                  { value: "503", label: "DDIP" },
+                  { value: "150", label: "Data science using R and Python" },
+                  { value: "197", label: "C, C++" },
+                  { value: "81", label: "SAP SCM, supply chain management" },
+                  { value: "434", label: "Catia" },
+                  { value: "98", label: "MBA" },
+                  { value: "315", label: "Data Science" },
+                  { value: "161", label: "stack web development" },
+                  {
+                    value: "520",
+                    label:
+                      "IBM machine Learning, Full Stack Development, AMCAT corporate communications",
+                  },
+                  { value: "277", label: "Power BI" },
+                  { value: "388", label: "Digital Marketing" },
+                  {
+                    value: "216",
+                    label:
+                      "Simulation and analysis of control algorithms for IGBT converters/inverters",
+                  },
+                  {
+                    value: "449",
+                    label: "C++, c sharp, fundamentals of project management",
+                  },
+                  {
+                    value: "80",
+                    label: "Data science using python and R programming",
+                  },
+                  { value: "378", label: "C++" },
+                  { value: "200", label: "Organic farming" },
+                  { value: "77", label: "Company Secretary" },
+                  { value: "366", label: "JavaScript,Python" },
+                  { value: "124", label: "PGDCA" },
+                  { value: "305", label: "Javascript" },
+                  { value: "370", label: "Companies Act;Indirect Taxation" },
+                  {
+                    value: "306",
+                    label:
+                      "Professional Certification Program - Data Science and AI",
+                  },
+                  { value: "123", label: "Financial Modelling" },
+                  {
+                    value: "393",
+                    label:
+                      "Antimicrobial Resistance - Theory and Methods ; Cancer Metastasis; \r\nFundamentals of Immunology: T Cells and Signaling;\r\nFundamentals of Immunology: Innate Immunity and B-Cell Function;\r\nDrug Discovery;Drug Delivery Principles and Engineering",
+                  },
+                ];
+
+                options.forEach(function (option) {
+                  var optionElement = document.createElement("option");
+                  optionElement.value = option.value;
+                  optionElement.text = option.label;
+                  document.getElementById("certifications").appendChild(optionElement);
+                });
+              </script></select
+            ><br /><br />
+
+            <button type="submit">Submit</button>
+            <div style="margin-top: 20px;">
+            <p>The predicted Degree based on your preferences: <b style="font-size:large;">{{ prediction_career }}</b></p>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </body>
+</html>

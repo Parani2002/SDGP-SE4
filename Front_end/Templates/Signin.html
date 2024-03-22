@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Navigator Sign in</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">  Bootstrap -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{{ url_for('static', filename='./image/logo.jpg') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='./CSS/Signin.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <div class="title">Welcome to Campus Navigator</div>
+        <!-- Signin form -->
+        <form action="/login" method="POST">
+          <div class="form-group">
+            <label for="name">Enter Your Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Enter Your Password</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+
+          <div class="button">
+            <button type="submit">SIGN IN</button>
+          </div>
+        </form>
+        <br /><br />
+        <div
+          class="Extra"
+          style="
+            width: 559px;
+            height: 36px;
+            padding-top: 11px;
+            padding-bottom: 11px;
+            padding-left: 13.46px;
+            padding-right: 14.54px;
+            justify-content: center;
+            align-items: center;
+            display: inline-flex;
+          "
+        >
+          <div
+            class="Welcome"
+            style="
+              text-align: center;
+              color: black;
+              font-size: 20px;
+              font-family: Poppins;
+              font-weight: 400;
+              text-transform: uppercase;
+              line-height: 60px;
+              letter-spacing: 2px;
+              word-wrap: break-word;
+            "
+          >
+            IF YOU DO NOT HAVE A NAVIGATOR ACCOUNT
+          </div>
+        </div>
+        <a
+          href="{{ url_for('signup_form') }}"
+          style="text-decoration: none; font-size: 20px"
+          >SIGN UP</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

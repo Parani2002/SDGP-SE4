@@ -27,7 +27,7 @@ body {
   background-color: var(--body-color);
   transition: var(--trans-02);
   overflow: hidden;
-  background-image: url(image/background.jpg);
+  background-image: url("../image/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -283,6 +283,31 @@ body.dark .search-bar input {
   color: var(--text-color);
 }
 
+.social-icons {
+  position: fixed;
+  top: 50%;
+  right: 80px;
+  transform: translateY(-50%);
+}
+
+.icon-link {
+  display: block; /* Display the icons as block elements */
+  margin-bottom: 20px; /* Add some space between icons */
+  
+}
+
+.icon-link i {
+  font-size: 50px; /* Adjust the size as needed */
+  color: black; /* Set icon color to black */
+ 
+}
+
+
+/* Bootstrap hover effect */
+.icon-link:hover {
+  transform: scale(1.2); /* Example: increase size on hover */
+}
+
 .morning-heading {
   font-size: 30px;
   font-weight: 200;
@@ -291,6 +316,10 @@ body.dark .search-bar input {
   color: var(--text-color);
   
 }
+.container{
+  text-align: center;
+}
+
 
 .news-container {
   display: grid;
@@ -361,6 +390,19 @@ button {
   margin: 0 auto;
   font-size: 15px;
 }
+.submitBtn{
+ 
+  background-color: var(--text-color);
+  color: var(--body-color);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  font-size: 15px;
+
+}
 
 .quiz-heading {
   font-weight: 300;
@@ -390,3 +432,9 @@ button {
 h2 {
   color: var(--text-color);
 }
+
+
+
+
+
+
