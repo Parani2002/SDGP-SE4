@@ -9,10 +9,6 @@ import pandas as pd
 import os
 import numpy as np
 app = Flask(_name_)
-#app run on port number 8000
-#hhtp//localhost:8000
-if _name_ == "_main_":
-    app.run(debug=True, port=8000)
 # Load the dataset
 path = 'Back_end/dataset1.csv'
 dataset = pd.read_csv(path)
@@ -49,3 +45,7 @@ def career_quiz():
 
     
     return render_template('prediction2.html',prediction_career = prediction[0])
+#app run on port number 8000
+#hhtp//localhost:8000
+if _name_ == "_main_":
+    app.run(debug=True, port=8000) 
