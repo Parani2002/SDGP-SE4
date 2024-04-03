@@ -1,5 +1,4 @@
-Flask
-
+Flask == 3.0.2
 request
 redirect
 url_for
